@@ -8,7 +8,7 @@ const FlashcardList = () => {
   const [flipped, setFlipped] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/flashcards").then((response) => {
+    axios.get("https://tuf-intern-task-dlkf.onrender.com/flashcards").then((response) => {
       setFlashcards(response.data);
     });
   }, []);

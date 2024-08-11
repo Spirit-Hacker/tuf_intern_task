@@ -13,7 +13,7 @@ const Dashboard = () => {
   }, []);
 
   const fetchFlashcards = () => {
-    axios.get("http://localhost:5000/flashcards").then((response) => {
+    axios.get("https://tuf-intern-task-dlkf.onrender.com/flashcards").then((response) => {
       setFlashcards(response.data);
     });
   };
@@ -21,7 +21,7 @@ const Dashboard = () => {
   const handleSubmit = () => {
     if (editing) {
       axios
-        .put(`http://localhost:5000/flashcards/${editing}`, {
+        .put(`https://tuf-intern-task-dlkf.onrender.com/flashcards/${editing}`, {
           question,
           answer,
         })
@@ -31,7 +31,7 @@ const Dashboard = () => {
         });
     } else {
       axios
-        .post("http://localhost:5000/flashcards", { question, answer })
+        .post("https://tuf-intern-task-dlkf.onrender.com/flashcards", { question, answer })
         .then(() => {
           fetchFlashcards();
         });
@@ -48,7 +48,7 @@ const Dashboard = () => {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/flashcards/${id}`).then(() => {
+    axios.delete(`https://tuf-intern-task-dlkf.onrender.com/flashcards/${id}`).then(() => {
       fetchFlashcards();
     });
   };
