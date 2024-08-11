@@ -7,8 +7,8 @@ require("dotenv").config();
 const app = express();
 app.use(
   cors({
-      origin: "https://tuf-intern-task-umber.vercel.app",
-      credentials: true,
+      origin: "*",
+      credentials: false,
   })
 );
 app.use(express.json());
