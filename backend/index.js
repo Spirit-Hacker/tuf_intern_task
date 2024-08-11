@@ -5,7 +5,12 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+      origin: "https://tuf-intern-task-7s1lceido-pranil-dhutrajs-projects.vercel.app",
+      credentials: true,
+  })
+);
 app.use(express.json());
 
 const db = mysql.createConnection({
